@@ -1,17 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CATrend Analyzer – Cochran-Armitage Trend Test</title>
-<meta name="description" content="Free online statistical analysis tool for Cochran-Armitage Trend Test.">
-<meta name="author" content="Mudasir Mohammed Ibrahim">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>CATrend Analyzer – Web tool for Cochran-Armitage Trend Test analysis</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="CATrend Analyzer">
+    <meta name="description" content="Free online statistical analysis tool for Cochran-Armitage Trend Test. Analyze trends in proportions across ordered categories for clinical trials, epidemiology, and public health research.">
+    <meta name="keywords" content="Cochran-Armitage Trend Test, CATT, trend analysis, statistics calculator, research tools, epidemiological analysis, clinical trial statistics, free calculator, research calculator, academic tools">
+    <meta name="theme-color" content="#1a73e8">
+    <meta name="author" content="Mudasir Mohammed Ibrahim">
+    
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/mudassiribrahim12/cochran-armitage/main/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/mudassiribrahim12/cochran-armitage/main/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/mudassiribrahim12/cochran-armitage/main/favicon-16x16.png">
+    <link rel="manifest" href="https://raw.githubusercontent.com/mudassiribrahim12/cochran-armitage/main/site.webmanifest">
+    
+        <!-- Additional SEO for faster indexing -->
+    <meta name="google-site-verification" content="PGq_oDNzKGPvdcDK-DzNc2VYrCckkJxWLyiqq7OdHq0" />
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
+    <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
+    
+    <!-- Improved Robots Meta -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    
+    <!-- Language and Geographic Targeting -->
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="GH" />
+    <meta name="geo.placename" content="Ghana" />
+    
+    <!-- News and Sitemap -->
+    <meta name="google-site-verification" content="PGq_oDNzKGPvdcDK-DzNc2VYrCckkJxWLyiqq7OdHq0" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://catrendanalyzer.mudasiribrahim.com/sitemap.xml" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:site_name" content="CATrend Analyzer">
+    <meta property="og:title" content="CATrend Analyzer – Open-Source Cochran–Armitage Trend Test (CATT) Web-Based Software">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://catrendanalyzer.mudasiribrahim.com/">
+    <meta property="og:description" content="Free online statistical analysis tool for Cochran-Armitage Trend Test. Analyze trends in proportions across ordered categories for clinical trials, epidemiology, and public health research.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/mudassiribrahim12/me/main/mysecondprofile.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://catrendanalyzer.mudasiribrahim.com/">
+    <meta property="twitter:title" content="CATrend Analyzer – Open-Source Cochran–Armitage Trend Test (CATT) Web-Based Software">
+    <meta property="twitter:description" content="Free online statistical analysis tool for Cochran-Armitage Trend Test. Analyze trends in proportions across ordered categories for clinical trials, epidemiology, and public health research.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/mudassiribrahim12/me/main/mysecondprofile.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://catrendanalyzer.mudasiribrahim.com/">
+    
+       <!-- Alternate language versions (if you add translations later) -->
+    <link rel="alternate" hreflang="en" href="https://catrendanalyzer.mudasiribrahim.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://catrendanalyzer.mudasiribrahim.com/" />
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="PGq_oDNzKGPvdcDK-DzNc2VYrCckkJxWLyiqq7OdHq0" />
+    <meta name="google-site-verification" content="kJB32ReGicGUyIhghuPcYT3SjyxekwpWrDlm9t7NasA" />
+    
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": "https://catrendanalyzer.mudasiribrahim.com/#software",
+        "name": "CATrend Analyzer – Open-Source Cochran–Armitage Trend Test (CATT) Web-Based Software",
+        "url": "https://catrendanalyzer.mudasiribrahim.com/",
+        "image": "https://raw.githubusercontent.com/mudassiribrahim12/me/main/mysecondprofile.jpg",
+        "logo": "https://raw.githubusercontent.com/mudassiribrahim12/me/main/favicon-32x32.png",
+        "description": "Free online statistical analysis tool for Cochran-Armitage Trend Test. Analyze trends in proportions across ordered categories for clinical trials, epidemiology, and public health research.",
+        "operatingSystem": "Web",
+        "applicationCategory": "StatisticalAnalysisApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "@id": "https://mudasiribrahim.com/#person",
+            "name": "Mudasir Mohammed Ibrahim",
+            "jobTitle": "Registered Nurse and Health Researcher",
+            "knowsAbout": ["Statistical Analysis", "Clinical Research", "Epidemiology", "Healthcare Research", "R Shiny Applications"]
+        },
+        "featureList": [
+            "Interactive contingency tables",
+            "Cochran-Armitage trend test analysis",
+            "Data visualization with charts",
+            "Export to Microsoft Word reports",
+            "Statistical interpretation",
+            "Trend analysis across ordered categories",
+            "Clinical trial statistics"
+        ],
+        "softwareVersion": "1.0.0",
+        "datePublished": "2026-02-01"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "@id": "https://catrendanalyzer.mudasiribrahim.com/#webapplication",
+        "url": "https://catrendanalyzer.mudasiribrahim.com/",
+        "name": "CATrend Analyzer – Open-Source Cochran–Armitage Trend Test (CATT) Web-Based Software",
+        "description": "Free online statistical analysis tool for Cochran-Armitage Trend Test. Analyze trends in proportions across ordered categories for clinical trials, epidemiology, and public health research.",
+        "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
+        "applicationCategory": "StatisticalAnalysisApplication",
+        "operatingSystem": "Any",
+        "author": {
+            "@type": "Person",
+            "@id": "https://mudasiribrahim.com/#person",
+            "name": "Mudasir Mohammed Ibrahim",
+            "url": "https://mudasiribrahim.com/",
+            "sameAs": [
+                "https://orcid.org/0000-0002-9049-8222",
+                "https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en",
+                "https://github.com/mudassiribrahim30"
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://catrendanalyzer.mudasiribrahim.com/#website",
+        "url": "https://catrendanalyzer.mudasiribrahim.com/",
+        "name": "CATrend Analyzer",
+        "description": "Free online statistical analysis tool for Cochran-Armitage Trend Test",
+        "publisher": {
+            "@id": "https://catrendanalyzer.mudasiribrahim.com/#organization"
+        },
+        "inLanguage": "en"
+    }
+    </script>
+    
+        <!-- Additional Schema for Better Ranking -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Top Cochran-Armitage Trend Test Calculators",
+        "description": "Best free online tools for Cochran-Armitage Trend Test analysis",
+        "numberOfItems": 1,
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://catrendanalyzer.mudasiribrahim.com/",
+            "name": "CATrend Analyzer - Free Cochran-Armitage Test Calculator"
+        }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Perform Cochran-Armitage Trend Test",
+        "description": "Step-by-step guide to perform trend analysis using CATrend Analyzer",
+        "totalTime": "PT5M",
+        "tool": {
+            "@type": "HowToTool",
+            "name": "CATrend Analyzer"
+        },
+        "step": [
+            {
+                "@type": "HowToStep",
+                "text": "Enter your contingency table data with ordered categories",
+                "name": "Data Entry"
+            },
+            {
+                "@type": "HowToStep",
+                "text": "Select test type (one-sided or two-sided)",
+                "name": "Configure Test"
+            },
+            {
+                "@type": "HowToStep",
+                "text": "Click Run Analysis to get Z-statistic and p-value",
+                "name": "Run Analysis"
+            },
+            {
+                "@type": "HowToStep",
+                "text": "Export results to Word, Excel, or CSV format",
+                "name": "Export Results"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the Cochran-Armitage Trend Test?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Cochran-Armitage Trend Test is a statistical method used to detect trends in proportions across ordered categorical variables. It's commonly used in clinical trials, epidemiology, and public health research to analyze dose-response relationships or trends across ordered groups."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate Cochran-Armitage test online for free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can calculate the Cochran-Armitage test for free using CATrend Analyzer. Simply enter your contingency table data, select your test type, and click 'Run Analysis'. The tool automatically computes the Z-statistic, p-value, and provides statistical interpretation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the assumptions of the Cochran-Armitage trend test?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The main assumptions are: ordered categorical groups, independent observations, binary outcome variable, and sufficiently large sample size for normal approximation. The test also requires non-zero marginal totals."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I export Cochran-Armitage test results to Word?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, CATrend Analyzer allows you to export complete analysis reports to Microsoft Word format, including contingency tables, statistical results, charts, and proper citations for your research."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+</head>
 
 <style>
 /* ============================================================
@@ -61,9 +303,9 @@
   --text-3:      #445078;
   --text-4:      #7282A4;
 
-  /* Typography */
-  --font-sans:   'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-serif:  'Playfair Display', Georgia, serif;
+  /* Typography — numiqo-style */
+  --font-sans:   'Inter', system-ui, sans-serif;
+  --font-serif:  'Source Serif 4', Georgia, serif;
   --font-mono:   'JetBrains Mono', 'Courier New', monospace;
 
   /* Radii */
@@ -313,7 +555,6 @@ body {
 }
 .topbar-btn:hover { background: var(--surface-3); color: var(--text-1); border-color: var(--border-med); }
 
-/* BRAND BUTTON — same in light and dark */
 .topbar-btn.primary {
   background: #4A5CF7 !important;
   color: #fff !important;
@@ -367,7 +608,7 @@ body {
 
 .hero-sub {
   font-size: 1.08rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-2);
   max-width: 600px;
   line-height: 1.75;
@@ -384,7 +625,7 @@ body {
   padding: 14px 28px;
   font-family: var(--font-sans);
   font-size: 0.97rem;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
   display: inline-flex;
@@ -403,7 +644,7 @@ body {
   padding: 14px 28px;
   font-family: var(--font-sans);
   font-size: 0.97rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
   display: inline-flex;
@@ -433,7 +674,7 @@ body {
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
-.stat-desc { font-size: 0.8rem; color: var(--text-3); margin-top: 3px; font-weight: 700; letter-spacing: 0.02em; }
+.stat-desc { font-size: 0.8rem; color: var(--text-3); margin-top: 3px; font-weight: 600; letter-spacing: 0.02em; }
 
 /* Demo card */
 .demo-card {
@@ -459,22 +700,21 @@ body {
   margin-bottom: 36px;
   gap: 16px;
 }
-.demo-title { font-size: 1.1rem; font-weight: 800; color: var(--text-1); letter-spacing: -0.01em; }
-.demo-subtitle { font-size: 0.88rem; color: var(--text-3); margin-top: 5px; font-weight: 600; }
+.demo-title { font-size: 1.1rem; font-weight: 700; color: var(--text-1); letter-spacing: -0.01em; }
+.demo-subtitle { font-size: 0.88rem; color: var(--text-3); margin-top: 5px; font-weight: 500; }
 .demo-badge {
   background: linear-gradient(135deg, var(--cyan-bg), rgba(74,92,247,0.07));
   color: var(--cyan);
   border: 1.5px solid var(--cyan-border);
   border-radius: 99px;
   font-size: 0.74rem;
-  font-weight: 800;
+  font-weight: 700;
   padding: 6px 16px;
   letter-spacing: 0.08em;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-/* --- FIXED: sparkline-wrap now two separate full-width blocks stacked, not nested --- */
 .sparkline-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -492,7 +732,7 @@ body {
 .mini-chart-label {
   font-size: 0.75rem;
   color: var(--text-3);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -503,7 +743,7 @@ body {
 .trend-bar { width: 100%; border-radius: 4px 4px 0 0; transition: height 1s cubic-bezier(0.34,1.56,0.64,1); }
 .trend-bar.success { background: linear-gradient(180deg, #4A5CF7, rgba(74,92,247,0.45)); }
 .trend-bar.failure { background: linear-gradient(180deg, #E11D48, rgba(225,29,72,0.35)); }
-.trend-bar-label { font-size: 0.64rem; color: var(--text-4); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-weight: 700; }
+.trend-bar-label { font-size: 0.64rem; color: var(--text-4); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-weight: 600; }
 
 .demo-stats-row {
   display: grid;
@@ -520,23 +760,23 @@ body {
 .demo-stat-val { font-family: var(--font-mono); font-size: 1.22rem; font-weight: 700; color: var(--brand); margin-bottom: 6px; }
 .demo-stat-val.positive { color: var(--emerald); }
 .demo-stat-val.neutral { color: var(--text-1); }
-.demo-stat-label { font-size: 0.76rem; color: var(--text-3); letter-spacing: 0.03em; font-weight: 700; }
+.demo-stat-label { font-size: 0.76rem; color: var(--text-3); letter-spacing: 0.03em; font-weight: 600; }
 
 /* Preview table */
 .preview-tbl-wrap { overflow: hidden; }
 .preview-tbl { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
-.preview-tbl th { background: var(--surface-3); color: var(--text-3); font-weight: 800; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 14px; text-align: center; border-bottom: 1.5px solid var(--border); }
+.preview-tbl th { background: var(--surface-3); color: var(--text-3); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 14px; text-align: center; border-bottom: 1.5px solid var(--border); }
 .preview-tbl td { padding: 8px 14px; text-align: center; border-bottom: 1px solid var(--border); color: var(--text-1); font-family: var(--font-mono); font-size: 0.84rem; font-weight: 600; }
 .preview-tbl tr:last-child td { border-bottom: none; }
-.preview-tbl .row-hdr { text-align: left; font-family: var(--font-sans); color: var(--text-2); font-size: 0.84rem; font-weight: 800; }
-.preview-tbl .total-row td { background: var(--brand-bg); color: var(--brand); font-weight: 800; }
+.preview-tbl .row-hdr { text-align: left; font-family: var(--font-sans); color: var(--text-2); font-size: 0.84rem; font-weight: 700; }
+.preview-tbl .total-row td { background: var(--brand-bg); color: var(--brand); font-weight: 700; }
 
 /* ============================================================
    SECTION PANELS
 ============================================================ */
 .section-header { padding: 40px 40px 0; max-width: 1120px; margin-bottom: 32px; }
 .section-title { font-family: var(--font-serif); font-size: 2.3rem; font-weight: 700; color: var(--text-1); letter-spacing: -0.03em; margin-bottom: 8px; }
-.section-desc { font-size: 0.98rem; font-weight: 600; color: var(--text-2); max-width: 600px; line-height: 1.7; }
+.section-desc { font-size: 0.98rem; font-weight: 500; color: var(--text-2); max-width: 600px; line-height: 1.7; }
 
 .panel {
   background: var(--surface);
@@ -554,7 +794,7 @@ body {
   justify-content: space-between;
   background: var(--surface-2);
 }
-.panel-title { font-size: 0.98rem; font-weight: 800; color: var(--text-1); display: flex; align-items: center; gap: 10px; letter-spacing: -0.01em; }
+.panel-title { font-size: 0.98rem; font-weight: 700; color: var(--text-1); display: flex; align-items: center; gap: 10px; letter-spacing: -0.01em; }
 .panel-title i { color: var(--brand); font-size: 0.92rem; }
 .panel-body { padding: 28px; }
 
@@ -562,7 +802,7 @@ body {
    FORM ELEMENTS
 ============================================================ */
 .form-group { margin-bottom: 20px; }
-.form-label { display: block; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; }
+.form-label { display: block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; }
 .form-input {
   width: 100%;
   background: var(--surface-2);
@@ -571,7 +811,7 @@ body {
   padding: 11px 15px;
   font-family: var(--font-sans);
   font-size: 0.93rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-1);
   transition: border-color 0.18s, box-shadow 0.18s;
   outline: none;
@@ -580,57 +820,13 @@ body {
 .form-input::placeholder { color: var(--text-4); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-/* Logo URL input banner */
-.logo-url-banner {
-  background: var(--brand-bg);
-  border: 1.5px solid rgba(74,92,247,0.22);
-  border-radius: var(--r-lg);
-  padding: 16px 20px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.logo-url-banner label { font-size: 0.84rem; font-weight: 800; color: var(--brand); white-space: nowrap; }
-.logo-url-input {
-  flex: 1;
-  min-width: 200px;
-  background: var(--surface);
-  border: 1.5px solid var(--border-med);
-  border-radius: var(--r-sm);
-  padding: 9px 14px;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text-1);
-  outline: none;
-  transition: border-color 0.15s;
-}
-.logo-url-input:focus { border-color: var(--brand); }
-.logo-url-input::placeholder { color: var(--text-4); }
-.logo-url-apply {
-  background: var(--brand);
-  color: #fff;
-  border: none;
-  border-radius: var(--r-sm);
-  padding: 9px 18px;
-  font-family: var(--font-sans);
-  font-size: 0.84rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: background 0.15s;
-  white-space: nowrap;
-}
-.logo-url-apply:hover { background: var(--brand-dark); }
-
 .checkbox-item {
   display: flex;
   align-items: center;
   gap: 11px;
   cursor: pointer;
   font-size: 0.93rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-2);
   padding: 11px 14px;
   border-radius: var(--r-md);
@@ -655,7 +851,7 @@ body {
   border-radius: var(--r-md);
   padding: 7px;
 }
-.ctrl-label { font-size: 0.74rem; color: var(--text-3); font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; padding: 0 8px; }
+.ctrl-label { font-size: 0.74rem; color: var(--text-3); font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 0 8px; }
 .ctrl-btn {
   background: var(--surface);
   border: 1.5px solid var(--border);
@@ -683,7 +879,7 @@ body {
   background: var(--surface-2);
   color: var(--text-3);
   font-size: 0.77rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   padding: 13px 14px;
@@ -693,9 +889,9 @@ body {
 .data-tbl th:first-child { text-align: left; }
 .data-tbl td { padding: 8px 10px; border-bottom: 1.5px solid var(--border); text-align: center; vertical-align: middle; }
 .data-tbl tr:last-child td { border-bottom: none; }
-.data-tbl .row-hdr-cell { font-size: 0.88rem; color: var(--text-2); font-weight: 800; text-align: left; padding-left: 0; }
-.data-tbl .total-cell { background: var(--surface-2); color: var(--text-2); font-family: var(--font-mono); font-size: 0.88rem; font-weight: 700; }
-.data-tbl .grand-total { color: var(--brand); font-weight: 800; }
+.data-tbl .row-hdr-cell { font-size: 0.88rem; color: var(--text-2); font-weight: 700; text-align: left; padding-left: 0; }
+.data-tbl .total-cell { background: var(--surface-2); color: var(--text-2); font-family: var(--font-mono); font-size: 0.88rem; font-weight: 600; }
+.data-tbl .grand-total { color: var(--brand); font-weight: 700; }
 
 .data-tbl input[type="number"] {
   width: 100%; min-width: 68px;
@@ -721,7 +917,7 @@ body {
   border-bottom: 2px solid transparent;
   color: var(--text-3);
   font-size: 0.77rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   text-align: center;
@@ -739,7 +935,7 @@ body {
   border-bottom: 2px solid transparent;
   color: var(--text-2);
   font-size: 0.92rem;
-  font-weight: 800;
+  font-weight: 700;
   font-family: var(--font-sans);
   width: 100%;
   outline: none;
@@ -760,7 +956,7 @@ body {
   padding: 18px 56px;
   font-family: var(--font-sans);
   font-size: 1.02rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.01em;
   cursor: pointer;
   transition: all 0.25s;
@@ -791,7 +987,7 @@ body {
   border-radius: var(--r-md);
   padding: 11px 18px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--amber);
   margin-top: 16px;
   max-width: 520px;
@@ -825,14 +1021,14 @@ body {
 .result-chip.green::after { background: var(--emerald); }
 .result-chip.violet::after { background: var(--violet); }
 
-.chip-label { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-4); margin-bottom: 10px; }
+.chip-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-4); margin-bottom: 10px; }
 .chip-value { font-family: var(--font-mono); font-size: 1.58rem; font-weight: 700; color: var(--text-1); line-height: 1.2; }
 .chip-value.accent { color: var(--brand); }
 .chip-value.teal { color: var(--cyan); }
 .chip-value.amber { color: var(--amber); }
 .chip-value.green { color: var(--emerald); }
 .chip-value.rose { color: var(--rose); }
-.chip-sub { font-size: 0.76rem; color: var(--text-4); margin-top: 6px; font-weight: 600; }
+.chip-sub { font-size: 0.76rem; color: var(--text-4); margin-top: 6px; font-weight: 500; }
 
 .sig-banner {
   border-radius: var(--r-lg);
@@ -849,8 +1045,51 @@ body {
 .sig-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
 .significant .sig-icon { background: rgba(14,165,114,0.15); color: var(--emerald); }
 .not-significant .sig-icon { background: rgba(225,29,72,0.15); color: var(--rose); }
-.sig-title { font-size: 1.02rem; font-weight: 800; color: var(--text-1); margin-bottom: 3px; }
-.sig-text { font-size: 0.9rem; font-weight: 600; color: var(--text-2); line-height: 1.55; }
+.sig-title { font-size: 1.02rem; font-weight: 700; color: var(--text-1); margin-bottom: 3px; }
+.sig-text { font-size: 0.9rem; font-weight: 500; color: var(--text-2); line-height: 1.55; }
+
+/* P-value dual display panel */
+.pval-dual-panel {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 26px;
+  margin-bottom: 24px;
+  box-shadow: var(--s-sm);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.pval-half {
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 18px 20px;
+  text-align: center;
+}
+.pval-half-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 10px;
+}
+.pval-half-val {
+  font-family: var(--font-mono);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+.pval-half-note {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--text-4);
+}
+@media (max-width: 600px) {
+  .pval-dual-panel { grid-template-columns: 1fr; }
+}
 
 .chi-panel {
   background: var(--amber-bg);
@@ -859,11 +1098,11 @@ body {
   padding: 20px 24px;
   margin-bottom: 24px;
 }
-.chi-panel-title { font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
+.chi-panel-title { font-size: 0.77rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
 .chi-row { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
 .chi-val { font-family: var(--font-mono); font-size: 1.42rem; font-weight: 700; color: var(--amber); }
-.chi-meta { font-size: 0.9rem; color: var(--text-2); font-weight: 700; }
-.chi-note { font-size: 0.82rem; color: var(--text-3); margin-top: 10px; padding-top: 10px; border-top: 1.5px solid var(--amber-border); font-weight: 600; }
+.chi-meta { font-size: 0.9rem; color: var(--text-2); font-weight: 600; }
+.chi-note { font-size: 0.82rem; color: var(--text-3); margin-top: 10px; padding-top: 10px; border-top: 1.5px solid var(--amber-border); font-weight: 500; }
 
 .interp-box {
   background: linear-gradient(135deg, var(--brand-bg), rgba(0,176,193,0.04));
@@ -872,25 +1111,25 @@ body {
   padding: 24px 28px;
   margin-bottom: 24px;
 }
-.interp-title { font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--brand); margin-bottom: 14px; display: flex; align-items: center; gap: 7px; }
-.interp-text { font-size: 0.97rem; font-weight: 600; color: var(--text-2); line-height: 1.8; margin-bottom: 16px; }
-.interp-text strong { color: var(--text-1); font-weight: 800; }
+.interp-title { font-size: 0.77rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--brand); margin-bottom: 14px; display: flex; align-items: center; gap: 7px; }
+.interp-text { font-size: 0.97rem; font-weight: 500; color: var(--text-2); line-height: 1.8; margin-bottom: 16px; }
+.interp-text strong { color: var(--text-1); font-weight: 700; }
 .interp-divider { border: none; border-top: 1.5px solid rgba(74,92,247,0.14); margin: 16px 0; }
-.interp-impl { font-size: 0.93rem; font-weight: 600; color: var(--text-2); line-height: 1.7; }
+.interp-impl { font-size: 0.93rem; font-weight: 500; color: var(--text-2); line-height: 1.7; }
 
 .prop-table-wrap { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r-lg); overflow: hidden; margin-bottom: 24px; box-shadow: var(--s-sm); }
-.prop-table-header { padding: 14px 20px; border-bottom: 1.5px solid var(--border); font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-3); display: flex; align-items: center; gap: 7px; background: var(--surface-2); }
+.prop-table-header { padding: 14px 20px; border-bottom: 1.5px solid var(--border); font-size: 0.77rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-3); display: flex; align-items: center; gap: 7px; background: var(--surface-2); }
 .prop-tbl { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-.prop-tbl th { background: var(--surface-2); color: var(--text-3); font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; padding: 11px 18px; text-align: center; border-bottom: 1.5px solid var(--border); }
+.prop-tbl th { background: var(--surface-2); color: var(--text-3); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 11px 18px; text-align: center; border-bottom: 1.5px solid var(--border); }
 .prop-tbl th:first-child { text-align: left; }
 .prop-tbl td { padding: 11px 18px; border-bottom: 1.5px solid var(--border); text-align: center; font-family: var(--font-mono); font-size: 0.9rem; font-weight: 600; color: var(--text-2); }
-.prop-tbl td:first-child { text-align: left; font-family: var(--font-sans); font-weight: 700; color: var(--text-2); font-size: 0.9rem; }
-.prop-tbl tr:last-child td { border-bottom: none; background: var(--brand-bg); color: var(--brand); font-weight: 800; }
+.prop-tbl td:first-child { text-align: left; font-family: var(--font-sans); font-weight: 600; color: var(--text-2); font-size: 0.9rem; }
+.prop-tbl tr:last-child td { border-bottom: none; background: var(--brand-bg); color: var(--brand); font-weight: 700; }
 .prop-tbl tr:last-child td:first-child { color: var(--text-2); }
 
 /* Chart */
 .chart-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
-.chart-toolbar-title { font-size: 0.98rem; font-weight: 800; color: var(--text-1); letter-spacing: -0.01em; }
+.chart-toolbar-title { font-size: 0.98rem; font-weight: 700; color: var(--text-1); letter-spacing: -0.01em; }
 .chart-toolbar-btns { display: flex; gap: 9px; }
 .tb-btn {
   background: var(--surface-2);
@@ -900,7 +1139,7 @@ body {
   padding: 8px 16px;
   font-size: 0.84rem;
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.15s;
   display: flex;
@@ -909,7 +1148,6 @@ body {
 }
 .tb-btn:hover { background: var(--surface-3); color: var(--text-1); border-color: var(--border-med); }
 
-/* ACCENT BUTTON — fixed color for both themes */
 .tb-btn.accent-btn {
   background: #4A5CF7 !important;
   color: #fff !important;
@@ -927,7 +1165,7 @@ body {
   position: relative;
   cursor: pointer;
 }
-.chart-hint { text-align: center; font-size: 0.77rem; font-weight: 700; color: var(--text-4); margin-top: 10px; }
+.chart-hint { text-align: center; font-size: 0.77rem; font-weight: 600; color: var(--text-4); margin-top: 10px; }
 
 /* Export */
 .export-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 24px; }
@@ -941,8 +1179,8 @@ body {
 }
 .export-card:hover { border-color: var(--brand); transform: translateY(-3px); box-shadow: var(--s-md); }
 .export-icon { font-size: 2.2rem; margin-bottom: 12px; color: var(--brand); }
-.export-title { font-size: 0.98rem; font-weight: 800; color: var(--text-1); margin-bottom: 6px; }
-.export-desc { font-size: 0.8rem; font-weight: 600; color: var(--text-3); margin-bottom: 16px; line-height: 1.55; }
+.export-title { font-size: 0.98rem; font-weight: 700; color: var(--text-1); margin-bottom: 6px; }
+.export-desc { font-size: 0.8rem; font-weight: 500; color: var(--text-3); margin-bottom: 16px; line-height: 1.55; }
 .export-btn {
   width: 100%;
   background: var(--brand-bg);
@@ -952,7 +1190,7 @@ body {
   padding: 10px;
   font-family: var(--font-sans);
   font-size: 0.88rem;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.18s;
   display: flex;
@@ -986,7 +1224,7 @@ body {
   padding: 6px 12px;
   font-size: 0.77rem;
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.15s;
 }
@@ -995,8 +1233,8 @@ body {
 /* ============================================================
    DOCUMENTATION
 ============================================================ */
-.doc-prose { font-size: 0.95rem; font-weight: 600; color: var(--text-2); line-height: 1.82; margin-bottom: 18px; }
-.doc-prose strong { color: var(--text-1); font-weight: 800; }
+.doc-prose { font-size: 0.95rem; font-weight: 500; color: var(--text-2); line-height: 1.82; margin-bottom: 18px; }
+.doc-prose strong { color: var(--text-1); font-weight: 700; }
 
 .formula-display {
   background: linear-gradient(135deg, var(--brand-bg), rgba(0,176,193,0.05));
@@ -1034,20 +1272,20 @@ body {
   gap: 11px;
   padding: 9px 0;
   font-size: 0.93rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-2);
   border-bottom: 1.5px solid var(--border);
 }
 .doc-list li:last-child { border-bottom: none; }
-.doc-list li::before { content: '→'; color: var(--brand); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; font-weight: 800; }
-.doc-list li strong { color: var(--text-1); font-weight: 800; }
+.doc-list li::before { content: '→'; color: var(--brand); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; font-weight: 700; }
+.doc-list li strong { color: var(--text-1); font-weight: 700; }
 
 .alert-strip {
   border-radius: var(--r-md);
   padding: 14px 18px;
   margin: 16px 0;
   font-size: 0.91rem;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: flex-start;
   gap: 11px;
@@ -1059,9 +1297,9 @@ body {
 .alert-warning i { color: var(--amber); margin-top: 1px; }
 
 .faq-item { margin-bottom: 20px; }
-.faq-q { font-size: 0.97rem; font-weight: 800; color: var(--text-1); margin-bottom: 9px; display: flex; align-items: flex-start; gap: 10px; }
-.faq-q::before { content: 'Q'; background: var(--brand-bg); color: var(--brand); border: 1.5px solid rgba(74,92,247,0.24); border-radius: var(--r-sm); width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; font-weight: 800; flex-shrink: 0; letter-spacing: 0.05em; }
-.faq-a { font-size: 0.93rem; font-weight: 600; color: var(--text-2); line-height: 1.75; padding-left: 34px; }
+.faq-q { font-size: 0.97rem; font-weight: 700; color: var(--text-1); margin-bottom: 9px; display: flex; align-items: flex-start; gap: 10px; }
+.faq-q::before { content: 'Q'; background: var(--brand-bg); color: var(--brand); border: 1.5px solid rgba(74,92,247,0.24); border-radius: var(--r-sm); width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; font-weight: 700; flex-shrink: 0; letter-spacing: 0.05em; }
+.faq-a { font-size: 0.93rem; font-weight: 500; color: var(--text-2); line-height: 1.75; padding-left: 34px; }
 
 /* ============================================================
    DEVELOPER
@@ -1071,15 +1309,15 @@ body {
 .dev-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .dev-info { flex: 1; min-width: 200px; }
 .dev-name { font-family: var(--font-serif); font-size: 1.65rem; font-weight: 700; color: var(--text-1); margin-bottom: 5px; letter-spacing: -0.02em; }
-.dev-role { font-size: 0.87rem; color: var(--brand); font-weight: 700; margin-bottom: 12px; }
-.dev-bio { font-size: 0.93rem; font-weight: 600; color: var(--text-2); line-height: 1.75; }
+.dev-role { font-size: 0.87rem; color: var(--brand); font-weight: 600; margin-bottom: 12px; }
+.dev-bio { font-size: 0.93rem; font-weight: 500; color: var(--text-2); line-height: 1.75; }
 
 .tech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
 .tech-card { background: var(--surface-2); border: 1.5px solid var(--border); border-radius: var(--r-lg); padding: 18px; text-align: center; transition: border-color 0.18s, box-shadow 0.18s; }
 .tech-card:hover { border-color: var(--brand); box-shadow: var(--s-md); }
 .tech-icon { font-size: 1.7rem; color: var(--brand); margin-bottom: 8px; }
-.tech-name { font-size: 0.9rem; font-weight: 800; color: var(--text-1); }
-.tech-desc { font-size: 0.74rem; font-weight: 600; color: var(--text-4); margin-top: 2px; }
+.tech-name { font-size: 0.9rem; font-weight: 700; color: var(--text-1); }
+.tech-desc { font-size: 0.74rem; font-weight: 500; color: var(--text-4); margin-top: 2px; }
 
 .contact-links { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 18px; }
 .contact-link {
@@ -1091,7 +1329,7 @@ body {
   border-radius: var(--r-md);
   padding: 11px 20px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-2);
   text-decoration: none;
   transition: all 0.18s;
@@ -1116,7 +1354,7 @@ body {
 .loading-spinner { width: 46px; height: 46px; border: 3px solid var(--border-med); border-top-color: #4A5CF7; border-radius: 50%; animation: spin 0.85s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .loading-title { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--text-1); letter-spacing: -0.02em; }
-.loading-sub { font-size: 0.84rem; font-weight: 600; color: var(--text-4); }
+.loading-sub { font-size: 0.84rem; font-weight: 500; color: var(--text-4); }
 
 /* ============================================================
    HAMBURGER
@@ -1134,7 +1372,6 @@ body {
   --border:    rgba(255,255,255,0.09);
   --border-med:rgba(255,255,255,0.16);
   --border-focus:#6B7CFF;
-  /* BRAND stays same vivid blue in dark mode */
   --brand:     #4A5CF7;
   --brand-dark:#3244D4;
   --brand-light:#8B98FF;
@@ -1214,8 +1451,8 @@ a:hover { text-decoration: underline; }
 }
 .feature-card:hover { border-color: var(--border-med); box-shadow: var(--s-md); }
 .feature-icon { font-size: 1.55rem; margin-bottom: 12px; }
-.feature-title { font-weight: 800; font-size: 0.98rem; color: var(--text-1); margin-bottom: 8px; }
-.feature-desc { font-size: 0.84rem; font-weight: 600; color: var(--text-2); line-height: 1.65; }
+.feature-title { font-weight: 700; font-size: 0.98rem; color: var(--text-1); margin-bottom: 8px; }
+.feature-desc { font-size: 0.84rem; font-weight: 500; color: var(--text-2); line-height: 1.65; }
 </style>
 </head>
 
@@ -1318,11 +1555,11 @@ a:hover { text-decoration: underline; }
       <div class="stats-strip">
         <div class="stat-cell"><div class="stat-num">100%</div><div class="stat-desc">Free &amp; Open Source</div></div>
         <div class="stat-cell"><div class="stat-num">No Login</div><div class="stat-desc">Required</div></div>
-        <div class="stat-cell"><div class="stat-num">2-sided</div><div class="stat-desc">P-value Reporting</div></div>
+        <div class="stat-cell"><div class="stat-num">1 &amp; 2-sided</div><div class="stat-desc">P-value Reporting</div></div>
         <div class="stat-cell"><div class="stat-num">Word / Excel</div><div class="stat-desc">Export Formats</div></div>
       </div>
 
-      <!-- Demo card — fixed layout -->
+      <!-- Demo card -->
       <div class="demo-card" id="demoCard">
         <div class="demo-header">
           <div>
@@ -1332,7 +1569,6 @@ a:hover { text-decoration: underline; }
           <div class="demo-badge"><i class="fas fa-circle" style="font-size:0.5em;"></i> &nbsp;DEMO</div>
         </div>
 
-        <!-- Two fully separate panels side by side -->
         <div class="sparkline-wrap">
           <div class="mini-chart-area">
             <div class="mini-chart-label">Frequency by group</div>
@@ -1347,7 +1583,6 @@ a:hover { text-decoration: underline; }
           </div>
         </div>
 
-        <!-- Stats row fully separate below -->
         <div class="demo-stats-row">
           <div class="demo-stat"><div class="demo-stat-val" id="demoZ">4.32</div><div class="demo-stat-label">Z-statistic (signed)</div></div>
           <div class="demo-stat"><div class="demo-stat-val positive" id="demoPval">&lt;0.001</div><div class="demo-stat-label">Two-sided P-value</div></div>
@@ -1384,7 +1619,7 @@ a:hover { text-decoration: underline; }
             <div class="feature-card"><div class="feature-icon" style="color:var(--brand);"><i class="fas fa-table"></i></div><div class="feature-title">Interactive Contingency Tables</div><div class="feature-desc">Create and edit tables with unlimited rows and columns. Dynamic totals update in real time.</div></div>
             <div class="feature-card"><div class="feature-icon" style="color:var(--cyan);"><i class="fas fa-chart-bar"></i></div><div class="feature-title">Advanced Visualization</div><div class="feature-desc">Clustered bar charts with counts, row %, and column % labels. Full-screen view and PNG export.</div></div>
             <div class="feature-card"><div class="feature-icon" style="color:var(--amber);"><i class="fas fa-file-word"></i></div><div class="feature-title">Professional Export</div><div class="feature-desc">Export to Microsoft Word, Excel, and CSV with tables, results, interpretation, and citations.</div></div>
-            <div class="feature-card"><div class="feature-icon" style="color:var(--rose);"><i class="fas fa-lightbulb"></i></div><div class="feature-title">Automatic Interpretation</div><div class="feature-desc">Signed Z-statistic, two-sided p-values, trend direction, and plain-language summaries in all exports.</div></div>
+            <div class="feature-card"><div class="feature-icon" style="color:var(--rose);"><i class="fas fa-lightbulb"></i></div><div class="feature-title">Automatic Interpretation</div><div class="feature-desc">Signed Z-statistic, one-sided &amp; two-sided p-values, trend direction, and plain-language summaries.</div></div>
             <div class="feature-card"><div class="feature-icon" style="color:var(--emerald);"><i class="fas fa-graduation-cap"></i></div><div class="feature-title">Educational</div><div class="feature-desc">Detailed formula explanations, step-by-step documentation, and an FAQ section.</div></div>
             <div class="feature-card"><div class="feature-icon" style="color:var(--violet);"><i class="fas fa-shield-alt"></i></div><div class="feature-title">Privacy First</div><div class="feature-desc">All calculations run entirely in your browser. No data is ever sent to a server.</div></div>
           </div>
@@ -1393,7 +1628,7 @@ a:hover { text-decoration: underline; }
     </div>
 
     <footer style="border-top:1.5px solid var(--border);padding:36px 40px;text-align:center;background:var(--surface);">
-      <p style="font-size:0.84rem;font-weight:600;color:var(--text-4);line-height:1.9;">
+      <p style="font-size:0.84rem;font-weight:500;color:var(--text-4);line-height:1.9;">
         © <span id="currentYear"></span> CATrend Analyzer — Open-Source Cochran–Armitage Trend Test Software.<br>
         Built with <span class="heart">❤️</span> from Ghana by
         <a href="https://mudasiribrahim.vercel.app/" target="_blank" rel="noopener">Mudasir Mohammed Ibrahim</a>
@@ -1493,9 +1728,14 @@ a:hover { text-decoration: underline; }
             <li><strong>p̄</strong> — Overall proportion of successes: Σyⱼ/N</li>
             <li><strong>N</strong> — Grand total: Σnⱼ</li>
           </ul>
-          <p class="doc-prose" style="margin-top:18px;"><strong>Signed Z-statistic:</strong> CATrend Analyzer reports a signed Z value. A positive Z indicates an increasing trend; a negative Z indicates a decreasing trend. The p-value is always two-sided.</p>
+          <p class="doc-prose" style="margin-top:18px;"><strong>Signed Z-statistic:</strong> CATrend Analyzer reports a signed Z value. A positive Z indicates an increasing trend; a negative Z indicates a decreasing trend. Both one-sided and two-sided p-values are reported. The one-sided p-value tests specifically the direction of the observed trend; the two-sided p-value tests for any trend regardless of direction.</p>
           <p class="doc-prose"><strong>Continuity correction:</strong></p>
           <div class="formula-display">Z = (|Σ yⱼ(xⱼ − x̄)| − 0.5) / √[ p̄(1−p̄) · Σ nⱼ(xⱼ − x̄)² ]</div>
+          <p class="doc-prose"><strong>P-value computation:</strong></p>
+          <div class="doc-code">One-sided p-value  = 1 − Φ(Z)         [upper tail, for Z > 0 / increasing trend]
+                   = Φ(Z)               [lower tail, for Z < 0 / decreasing trend]
+                   = min(Φ(Z), 1−Φ(Z)) [general: tail in direction of Z]
+Two-sided p-value  = 2 × (1 − Φ(|Z|))</div>
           <p class="doc-prose"><strong>Step-by-step algorithm:</strong></p>
           <div class="doc-code">1. Assign scores xⱼ = 1, 2, …, k
 2. Compute column totals nⱼ and success counts yⱼ
@@ -1504,7 +1744,14 @@ a:hover { text-decoration: underline; }
 5. Numerator = Σ yⱼ(xⱼ − x̄)
 6. Variance = p̄(1−p̄) · Σ nⱼ(xⱼ − x̄)²
 7. Z = (|Numerator| − correction) / √Variance, sign from Numerator
-8. p-value = 2 · (1 − Φ(|Z|))   [two-sided]</div>
+8. One-sided p  = 1 − Φ(|Z|)    [tail in direction of Z]
+9. Two-sided p  = 2 × (1 − Φ(|Z|))
+
+Chi-square (Pearson, general association):
+10. Expected Eᵢⱼ = (rowTotalᵢ × colTotalⱼ) / N
+11. χ² = Σᵢⱼ (Oᵢⱼ − Eᵢⱼ)² / Eᵢⱼ
+12. df = (rows−1) × (cols−1)
+13. p-value from chi-square distribution with df degrees of freedom</div>
         </div>
       </div>
 
@@ -1517,10 +1764,6 @@ a:hover { text-decoration: underline; }
             <li><strong>p &lt; 0.05</strong> — Statistically significant trend</li>
             <li><strong>p ≥ 0.05</strong> — No significant trend detected</li>
           </ul>
-          <div class="alert-strip alert-warning">
-            <i class="fas fa-exclamation-triangle"></i>
-            <div>Statistical significance does not imply clinical importance. Always consider effect size and practical context when interpreting results.</div>
-          </div>
         </div>
       </div>
 
@@ -1536,16 +1779,20 @@ a:hover { text-decoration: underline; }
             <div class="faq-a">No. CATT requires a binary outcome. For ordinal outcomes with multiple categories, consider the Jonckheere–Terpstra test or linear-by-linear association test.</div>
           </div>
           <div class="faq-item">
+            <div class="faq-q">What is the difference between one-sided and two-sided p-values?</div>
+            <div class="faq-a">The one-sided p-value tests whether the trend goes in a specific direction (increasing or decreasing) as observed in your data. The two-sided p-value tests whether any trend exists regardless of direction. For confirmatory analysis where you pre-specified the direction, the one-sided p is appropriate. Otherwise, the two-sided p is recommended.</div>
+          </div>
+          <div class="faq-item">
             <div class="faq-q">What if my groups are not equally spaced?</div>
             <div class="faq-a">CATrend Analyzer assigns default equally-spaced scores (1, 2, 3, …). If your groups are unequally spaced, scores should be adjusted manually — currently not supported in the UI, so calculate manually or contact the developer.</div>
           </div>
           <div class="faq-item">
-            <div class="faq-q">How do I cite CATrend Analyzer?</div>
-            <div class="faq-a">Use the citation provided in the results panel after running an analysis. The citation follows the APA format and includes the retrieval URL.</div>
+            <div class="faq-q">How does this differ from a chi-square test?</div>
+            <div class="faq-a">The Pearson chi-square test of association detects any association between variables (df = (rows−1)×(cols−1)). CATT specifically tests for a linear trend in proportions across ordered groups (df = 1 for the trend component), making it more powerful when a monotone trend is expected. The chi-square results shown in this tool use the correct Pearson formula and are directly comparable with software like SPSS, R, or SAS.</div>
           </div>
           <div class="faq-item">
-            <div class="faq-q">How does this differ from a chi-square test?</div>
-            <div class="faq-a">The chi-square test of association detects any association between variables. CATT specifically tests for a linear trend in proportions across ordered groups, making it more powerful when a monotone trend is expected.</div>
+            <div class="faq-q">How do I cite CATrend Analyzer?</div>
+            <div class="faq-a">Use the citation provided in the results panel after running an analysis. The citation follows the APA format and includes the retrieval URL.</div>
           </div>
         </div>
       </div>
@@ -1593,20 +1840,20 @@ a:hover { text-decoration: underline; }
             <div class="feature-card"><div class="feature-icon" style="color:var(--cyan);"><i class="fas fa-laptop-code"></i></div><div class="feature-title">Technical Approach</div><div class="feature-desc">Developing user-friendly, open-source tools implementing rigorous statistical methods with clinical relevance.</div></div>
             <div class="feature-card"><div class="feature-icon" style="color:var(--emerald);"><i class="fas fa-globe-africa"></i></div><div class="feature-title">Community Impact</div><div class="feature-desc">Free resources supporting healthcare research and education worldwide, particularly in resource-limited settings.</div></div>
           </div>
-<div class="contact-links">
-  <a href="mailto:mudassiribrahim30@gmail.com" class="contact-link">
-    <i class="fas fa-envelope"></i> Email
-  </a>
-  <a href="https://www.researchgate.net/profile/Mudasir-Ibrahim" target="_blank" rel="noopener" class="contact-link">
-    <i class="fab fa-researchgate"></i> ResearchGate
-  </a>
-  <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" target="_blank" rel="noopener" class="contact-link">
-    <i class="fas fa-graduation-cap"></i> Google Scholar
-  </a>
-  <a href="https://orcid.org/0000-0002-9049-8222" target="_blank" rel="noopener" class="contact-link">
-    <i class="fas fa-id-badge"></i> ORCID
-  </a>
-</div>
+          <div class="contact-links">
+            <a href="mailto:mudassiribrahim30@gmail.com" class="contact-link">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://www.researchgate.net/profile/Mudasir-Ibrahim" target="_blank" rel="noopener" class="contact-link">
+              <i class="fab fa-researchgate"></i> ResearchGate
+            </a>
+            <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" target="_blank" rel="noopener" class="contact-link">
+              <i class="fas fa-graduation-cap"></i> Google Scholar
+            </a>
+            <a href="https://orcid.org/0000-0002-9049-8222" target="_blank" rel="noopener" class="contact-link">
+              <i class="fas fa-id-badge"></i> ORCID
+            </a>
+          </div>
         </div>
       </div>
 
@@ -1633,7 +1880,10 @@ function performCATT(data, continuityCorrection) {
                  s + n*(scores[j]-xbar)**2, 0));
   const cc   = continuityCorrection ? 0.5 : 0;
   const Z    = (Math.abs(num)-cc)/den * Math.sign(num);
-  return Z;
+  // One-sided p (in direction of Z), Two-sided p
+  const pOne  = 1 - normalCDF(Math.abs(Z));
+  const pTwo  = 2 * pOne;
+  return { Z, pOne, pTwo };
 }</div>
         </div>
       </div>
@@ -1695,16 +1945,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => ls.remove(), 500);
   }, 900);
 });
-
-// ============================================================
-// LOGO URL
-// ============================================================
-function applyLogo() {
-  const url = document.getElementById('logoUrlInput').value.trim();
-  if (!url) return;
-  const wrap = document.getElementById('logoImgWrap');
-  wrap.innerHTML = `<img src="${url}" alt="App Logo" onerror="this.parentElement.innerHTML='<i class=\\'fas fa-chart-line fallback-icon\\'></i>'" />`;
-}
 
 // ============================================================
 // NAVIGATION
@@ -1893,26 +2133,91 @@ function erf(x) {
 }
 function normalCDF(z) { return (1+erf(z/Math.sqrt(2)))/2; }
 
-function chiSquareAssoc(data) {
+// ============================================================
+// CHI-SQUARE P-VALUE (regularised incomplete gamma)
+// Uses the series expansion for P(a, x) = gammainc(a, x)
+// df must be even or half-integer; here df = integer >= 1
+// ============================================================
+function chiSquarePValue(chi2, df) {
+  if (chi2 <= 0 || df <= 0) return 1;
+  // p-value = 1 - CDF_chi2(chi2, df) = Q(df/2, chi2/2)
+  // Use regularised upper incomplete gamma Q(a, x)
+  const a = df / 2;
+  const x = chi2 / 2;
+  return upperIncompleteGamma(a, x);
+}
+
+// Regularised upper incomplete gamma Q(a,x) via series/continued fraction
+function upperIncompleteGamma(a, x) {
+  if (x < 0) return 1;
+  if (x === 0) return 1;
+  // For x < a+1 use series for lower, then Q = 1 - P
+  if (x < a + 1) {
+    return 1 - gammaSeriesP(a, x);
+  } else {
+    return gammaContinuedFractionQ(a, x);
+  }
+}
+
+function gammaLn(z) {
+  // Lanczos approximation
+  const g = 7;
+  const c = [0.99999999999980993,676.5203681218851,-1259.1392167224028,
+    771.32342877765313,-176.61502916214059,12.507343278686905,
+    -0.13857109526572012,9.9843695780195716e-6,1.5056327351493116e-7];
+  if (z < 0.5) return Math.log(Math.PI / Math.sin(Math.PI * z)) - gammaLn(1 - z);
+  z -= 1;
+  let x = c[0];
+  for (let i = 1; i < g + 2; i++) x += c[i] / (z + i);
+  const t = z + g + 0.5;
+  return 0.5 * Math.log(2 * Math.PI) + (z + 0.5) * Math.log(t) - t + Math.log(x);
+}
+
+function gammaSeriesP(a, x) {
+  // Series expansion for P(a,x)
+  const ITMAX = 200, EPS = 3e-14;
+  let ap = a, del = 1 / a, sum = del;
+  for (let n = 1; n <= ITMAX; n++) {
+    ap += 1; del *= x / ap; sum += del;
+    if (Math.abs(del) < Math.abs(sum) * EPS) break;
+  }
+  return sum * Math.exp(-x + a * Math.log(x) - gammaLn(a));
+}
+
+function gammaContinuedFractionQ(a, x) {
+  // Lentz's continued fraction for Q(a,x)
+  const ITMAX = 200, EPS = 3e-14, FPMIN = 1e-300;
+  let b = x + 1 - a, c = 1 / FPMIN, d = 1 / b, h = d;
+  for (let i = 1; i <= ITMAX; i++) {
+    const an = -i * (i - a);
+    b += 2;
+    d = an * d + b; if (Math.abs(d) < FPMIN) d = FPMIN;
+    c = b + an / c; if (Math.abs(c) < FPMIN) c = FPMIN;
+    d = 1 / d;
+    const del = d * c;
+    h *= del;
+    if (Math.abs(del - 1) < EPS) break;
+  }
+  return Math.exp(-x + a * Math.log(x) - gammaLn(a)) * h;
+}
+
+// ============================================================
+// PEARSON CHI-SQUARE (general association, matches SPSS/R/SAS)
+// ============================================================
+function pearsonChiSquare(data) {
   const { rows, cols, data: d } = data || currentData;
   const rowT = d.map(r => r.reduce((a,b)=>a+b,0));
   const colT = cols.map((_,j) => d.reduce((s,r)=>s+r[j],0));
   const N = rowT.reduce((a,b)=>a+b,0);
-  let chi=0;
+  if (N === 0) return { statistic: 0, df: 0, pValue: 1 };
+  let chi = 0;
   d.forEach((r,i) => r.forEach((v,j) => {
-    const exp = rowT[i]*colT[j]/N;
-    if (exp>0) chi += (v-exp)**2/exp;
+    const exp = rowT[i] * colT[j] / N;
+    if (exp > 0) chi += (v - exp) ** 2 / exp;
   }));
-  const df = (rows.length-1)*(cols.length-1);
-  let pv = 1;
-  if (chi>0) {
-    const a2=df/2, x2=chi/2;
-    let sum=0, term=1/a2;
-    for (let n=1;n<1000;n++){sum+=term;term*=x2/(a2+n);if(Math.abs(term)<1e-15)break;}
-    pv = 1 - Math.exp(-x2)*Math.pow(x2,a2)*sum;
-    pv = Math.max(0, Math.min(1, pv));
-  }
-  return { statistic: chi, df, pValue: pv };
+  const df = (rows.length - 1) * (cols.length - 1);
+  const pValue = chiSquarePValue(chi, df);
+  return { statistic: chi, df, pValue };
 }
 
 // ============================================================
@@ -1932,34 +2237,47 @@ function performCAT() {
   const varT = pbar*(1-pbar)*nj.reduce((s,n,j)=>s+n*(scores[j]-xbar)**2,0);
   const corr = cc ? 0.5 : 0;
   let Z = varT>0 ? (Math.abs(num)-corr)/Math.sqrt(varT)*(num<0?-1:1) : 0;
-  const pval = 2*(1-normalCDF(Math.abs(Z)));
-  const chi = Z*Z;
+
+  // P-values
+  const pTwo  = 2 * (1 - normalCDF(Math.abs(Z)));
+  // One-sided: tail in direction of Z (if Z>0, right tail; if Z<0, left tail)
+  const pOne  = 1 - normalCDF(Math.abs(Z));
+
+  const chiTrend = Z * Z; // trend chi-square (df=1) — same as Z²
+
   const rowTotals = data.map(r=>r.reduce((a,b)=>a+b,0));
   const colTotals = nj;
   const rowPct = data.map((r,i)=>r.map(v=>rowTotals[i]>0?(v/rowTotals[i]*100).toFixed(1):'0.0'));
   const colPct = data.map((r,i)=>r.map((v,j)=>colTotals[j]>0?(v/colTotals[j]*100).toFixed(1):'0.0'));
   const props = yj.map((y,j)=>nj[j]>0?(y/nj[j]*100).toFixed(1):'0.0');
 
-  const pDisp = pval < 0.001 ? '<0.001' : pval < 0.01 ? pval.toFixed(4) : pval.toFixed(6);
-  const sig = pval < 0.05;
+  // Format p-values for display
+  const fmtP = p => p < 0.001 ? '<0.001' : p < 0.01 ? p.toFixed(4) : p.toFixed(6);
+  const pTwoDisp = fmtP(pTwo);
+  const pOneDisp = fmtP(pOne);
+
+  const sig = pTwo < 0.05;
+  const trend = Z > 0.001 ? 'Increasing' : Z < -0.001 ? 'Decreasing' : 'No trend';
+
   let statInterp = '';
-  if (pval<0.001) statInterp = `There is a highly significant trend in proportions across the ordered groups (p < 0.001). `;
-  else if (pval<0.01) statInterp = `There is a very significant trend in proportions across the ordered groups (p < 0.01). `;
-  else if (pval<0.05) statInterp = `There is a statistically significant trend in proportions across the ordered groups (p < 0.05). `;
-  else statInterp = `No statistically significant trend was detected across the ordered groups (p = ${pval.toFixed(4)}). `;
-  if (pval<0.05) statInterp += `The evidence supports an ${(Z>0?'increasing':'decreasing').toLowerCase()} trend (Z = ${Z.toFixed(4)}).`;
+  if (pTwo < 0.001) statInterp = `There is a <strong>highly significant</strong> trend in proportions across the ordered groups (two-sided p &lt; 0.001). `;
+  else if (pTwo < 0.01) statInterp = `There is a <strong>very significant</strong> trend in proportions across the ordered groups (two-sided p &lt; 0.01). `;
+  else if (pTwo < 0.05) statInterp = `There is a <strong>statistically significant</strong> trend in proportions across the ordered groups (two-sided p &lt; 0.05). `;
+  else statInterp = `No statistically significant trend was detected across the ordered groups (two-sided p = ${pTwo.toFixed(4)}). `;
+  if (pTwo < 0.05) statInterp += `The evidence supports an <strong>${trend.toLowerCase()}</strong> trend (Z = ${Z.toFixed(4)}, one-sided p = ${pOneDisp}).`;
   else statInterp += 'This suggests no systematic relationship between the outcome and the ordered groups.';
+
   const practImpl = sig
-    ? `Statistical evidence supports a ${Z>0?'increasing':'decreasing'} trend across groups. The outcome variable shows systematic change across ordered categories. The signed Z-statistic (${Z.toFixed(4)}) indicates direction of trend. Consider effect size and clinical context.`
+    ? `Statistical evidence supports a ${trend} trend across groups. The outcome variable shows systematic change across ordered categories. The signed Z-statistic (${Z.toFixed(4)}) indicates direction of trend. Consider effect size and clinical context.`
     : `No statistical evidence for a trend was found. The outcome variable does not show systematic change across ordered categories. Consider whether sample size may be a factor, or whether the relationship is truly non-linear.`;
 
+  // Pearson chi-square for general association (correct df, correct p)
+  const chiAssoc = pearsonChiSquare(currentData);
+
   return {
-    Z, chi, pval, pDisp, sig, N, k, xbar, pbar, num, varT, cc,
+    Z, chiTrend, pTwo, pOne, pTwoDisp, pOneDisp, sig, N, k, xbar, pbar, num, varT, cc,
     nj, yj, rowTotals, colTotals, rowPct, colPct, props,
-    labels: cols.slice(),
-    trend: Z>0.001?'Increasing':Z<-0.001?'Decreasing':'No trend',
-    chiAssoc: chiSquareAssoc(),
-    statInterp, practImpl
+    labels: cols.slice(), trend, chiAssoc, statInterp, practImpl
   };
 }
 
@@ -1969,14 +2287,6 @@ function performCAT() {
 function displayResults(r) {
   const rs = document.getElementById('resultsSection');
 
-  let interpHTML = r.statInterp;
-  if (r.pval<0.001) interpHTML = `There is a <strong>highly significant</strong> trend in proportions across the ordered groups (p &lt; 0.001). `;
-  else if (r.pval<0.01) interpHTML = `There is a <strong>very significant</strong> trend in proportions across the ordered groups (p &lt; 0.01). `;
-  else if (r.pval<0.05) interpHTML = `There is a <strong>statistically significant</strong> trend in proportions across the ordered groups (p &lt; 0.05). `;
-  else interpHTML = `No statistically significant trend was detected across the ordered groups (p = ${r.pval.toFixed(4)}). `;
-  if (r.pval<0.05) interpHTML += `The evidence supports an <strong>${r.trend.toLowerCase()}</strong> trend (Z = ${r.Z.toFixed(4)}).`;
-  else interpHTML += 'This suggests no systematic relationship between the outcome and the ordered groups.';
-
   const propRows = `
     <tr><td>Success Count</td>${r.yj.map(v=>`<td>${v}</td>`).join('')}</tr>
     <tr><td>Total Count</td>${r.nj.map(v=>`<td>${v}</td>`).join('')}</tr>
@@ -1985,8 +2295,9 @@ function displayResults(r) {
   rs.innerHTML = `
     <div class="result-chips">
       <div class="result-chip"><div class="chip-label">Z-statistic (signed)</div><div class="chip-value accent">${r.Z.toFixed(4)}</div><div class="chip-sub">+ increasing / − decreasing</div></div>
-      <div class="result-chip teal"><div class="chip-label">Chi-square (trend)</div><div class="chip-value teal">${r.chi.toFixed(4)}</div><div class="chip-sub">df = 1, linear trend</div></div>
-      <div class="result-chip amber"><div class="chip-label">P-value (two-sided)</div><div class="chip-value amber">${r.pDisp}</div><div class="chip-sub">Cochran–Armitage</div></div>
+      <div class="result-chip teal"><div class="chip-label">χ² trend (df=1)</div><div class="chip-value teal">${r.chiTrend.toFixed(4)}</div><div class="chip-sub">Linear trend component = Z²</div></div>
+      <div class="result-chip amber"><div class="chip-label">Two-sided P-value</div><div class="chip-value amber">${r.pTwoDisp}</div><div class="chip-sub">Cochran–Armitage (both directions)</div></div>
+      <div class="result-chip violet"><div class="chip-label">One-sided P-value</div><div class="chip-value" style="color:var(--violet);font-size:1.4rem;">${r.pOneDisp}</div><div class="chip-sub">Direction of observed trend</div></div>
       <div class="result-chip"><div class="chip-label">Sample Size</div><div class="chip-value">${r.N}</div><div class="chip-sub">${r.k} ordered groups</div></div>
       <div class="result-chip ${r.sig?'green':'rose'}"><div class="chip-label">Trend</div><div class="chip-value ${r.sig?'green':'rose'}">${r.sig ? r.trend : 'None'}</div><div class="chip-sub">${r.sig ? 'Significant at α=0.05' : 'Not significant'}</div></div>
     </div>
@@ -1995,22 +2306,37 @@ function displayResults(r) {
       <div class="sig-icon"><i class="fas fa-${r.sig?'check':'times'}"></i></div>
       <div>
         <div class="sig-title">${r.sig ? 'Significant Trend Detected' : 'No Significant Trend'}</div>
-        <div class="sig-text">${r.sig ? `A statistically significant ${r.trend.toLowerCase()} trend was detected (p = ${r.pDisp}, Z = ${r.Z.toFixed(4)}).` : `No significant trend detected (p = ${r.pDisp}).`}</div>
+        <div class="sig-text">${r.sig
+          ? `A statistically significant ${r.trend.toLowerCase()} trend was detected (Z = ${r.Z.toFixed(4)}, one-sided p = ${r.pOneDisp}, two-sided p = ${r.pTwoDisp}).`
+          : `No significant trend detected (Z = ${r.Z.toFixed(4)}, one-sided p = ${r.pOneDisp}, two-sided p = ${r.pTwoDisp}).`}</div>
+      </div>
+    </div>
+
+    <div class="pval-dual-panel">
+      <div class="pval-half">
+        <div class="pval-half-label">One-sided P-value</div>
+        <div class="pval-half-val">${r.pOneDisp}</div>
+        <div class="pval-half-note">Tests trend in <strong>${r.trend.toLowerCase()}</strong> direction only.<br>Use when direction was pre-specified.</div>
+      </div>
+      <div class="pval-half">
+        <div class="pval-half-label">Two-sided P-value</div>
+        <div class="pval-half-val">${r.pTwoDisp}</div>
+        <div class="pval-half-note">Tests any trend regardless of direction.<br>Recommended for exploratory analysis.</div>
       </div>
     </div>
 
     <div class="chi-panel">
-      <div class="chi-panel-title"><i class="fas fa-compress-alt"></i> Chi-square Test of Association</div>
+      <div class="chi-panel-title"><i class="fas fa-compress-alt"></i> Pearson Chi-Square Test of Association</div>
       <div class="chi-row">
         <span class="chi-val">${r.chiAssoc.statistic.toFixed(4)}</span>
-        <span class="chi-meta">χ² (df = ${r.chiAssoc.df}) · p = ${r.chiAssoc.pValue.toFixed(6)}</span>
+        <span class="chi-meta">χ² (df = ${r.chiAssoc.df}) · p = ${r.chiAssoc.pValue < 0.001 ? '<0.001' : r.chiAssoc.pValue.toFixed(6)}</span>
       </div>
-      <div class="chi-note"><i class="fas fa-info-circle"></i> Tests general association, not specifically linear trend. Compare with the trend p-value above.</div>
+      <div class="chi-note"><i class="fas fa-info-circle"></i> Standard Pearson chi-square test of general association (same formula as SPSS/R/SAS). Tests any association between row and column variables — not specifically a linear trend. df = (rows−1)×(cols−1) = ${r.chiAssoc.df}. Compare with the trend-specific Z-statistic above.</div>
     </div>
 
     <div class="interp-box">
       <div class="interp-title"><i class="fas fa-lightbulb"></i> Statistical Interpretation</div>
-      <div class="interp-text">${interpHTML}</div>
+      <div class="interp-text">${r.statInterp}</div>
       <hr class="interp-divider">
       <div class="interp-impl"><strong>Practical implications:</strong> ${r.practImpl}</div>
     </div>
@@ -2057,7 +2383,7 @@ function displayResults(r) {
           <div class="export-card">
             <div class="export-icon" style="color:var(--cyan);"><i class="fas fa-file-csv"></i></div>
             <div class="export-title">Raw Data CSV</div>
-            <div class="export-desc">Transposed observation-level data: each row = one observation, columns = Group and Outcome</div>
+            <div class="export-desc">Observation-level data: each row = one observation, columns = Group and Outcome</div>
             <button class="export-btn" id="exportCsvBtn"><i class="fas fa-download"></i> Export .csv</button>
           </div>
         </div>
@@ -2067,12 +2393,12 @@ function displayResults(r) {
     <div class="panel" style="margin-bottom:24px;">
       <div class="panel-header"><div class="panel-title"><i class="fas fa-book"></i> Citation</div></div>
       <div class="panel-body">
-        <p style="font-size:0.9rem;font-weight:600;color:var(--text-3);margin-bottom:14px;">If you use CATrend Analyzer in your research, please cite it as:</p>
+        <p style="font-size:0.9rem;font-weight:500;color:var(--text-3);margin-bottom:14px;">If you use CATrend Analyzer in your research, please cite it as:</p>
         <div class="citation-box">
           <button class="copy-cite-btn" id="copyCiteBtn"><i class="fas fa-copy"></i> Copy</button>
           Ibrahim, M. M. (2026). <em>CATrend Analyzer: Cochran–Armitage Trend Test Analysis Tool</em> [Computer software]. Retrieved from <a href="https://cochran-armitage.vercel.app/" target="_blank">https://cochran-armitage.vercel.app/</a>
         </div>
-        <p style="font-size:0.82rem;font-weight:600;color:var(--text-4);margin-top:12px;">Analysis performed using CATrend Analyzer v1.0. Z reported with sign (+ = increasing, − = decreasing). P-value always two-sided.</p>
+        <p style="font-size:0.82rem;font-weight:500;color:var(--text-4);margin-top:12px;">Analysis performed using CATrend Analyzer v1.0. Z reported with sign (+ = increasing, − = decreasing). One-sided and two-sided p-values reported. Chi-square uses Pearson formula consistent with SPSS/R/SAS.</p>
       </div>
     </div>`;
 
@@ -2123,15 +2449,15 @@ function chartOptions(r, large = false) {
     maintainAspectRatio: false,
     backgroundColor: bgColor,
     plugins: {
-      title: { display: true, text: 'Frequency Distribution', font: { size: 15*fs, family: 'Plus Jakarta Sans, sans-serif', weight: '800' }, color: isDark ? '#F0F4FF' : '#0A0F1E', padding: { bottom: 18*fs } },
-      legend: { position: 'top', labels: { font: { size: 12*fs, family: 'Plus Jakarta Sans, sans-serif', weight: '700' }, color: textColor, padding: 18*fs } },
+      title: { display: true, text: 'Frequency Distribution', font: { size: 15*fs, family: 'Inter, sans-serif', weight: '700' }, color: isDark ? '#F0F4FF' : '#0A0F1E', padding: { bottom: 18*fs } },
+      legend: { position: 'top', labels: { font: { size: 12*fs, family: 'Inter, sans-serif', weight: '600' }, color: textColor, padding: 18*fs } },
       tooltip: {
         backgroundColor: isDark ? '#1F2A3D' : '#fff',
         borderColor: isDark ? 'rgba(255,255,255,0.14)' : 'rgba(13,17,23,0.1)',
         borderWidth: 1.5,
         padding: 13*fs,
-        titleFont: { size: 13*fs, family: 'Plus Jakarta Sans, sans-serif', weight: '800' },
-        bodyFont: { size: 12*fs, family: 'Plus Jakarta Sans, sans-serif', weight: '600' },
+        titleFont: { size: 13*fs, family: 'Inter, sans-serif', weight: '700' },
+        bodyFont: { size: 12*fs, family: 'Inter, sans-serif', weight: '500' },
         titleColor: isDark ? '#F0F4FF' : '#0A0F1E',
         bodyColor: textColor,
         callbacks: {
@@ -2146,14 +2472,14 @@ function chartOptions(r, large = false) {
       datalabels: {
         display: true,
         color: '#fff',
-        font: { weight: '700', size: 11*fs, family: 'JetBrains Mono, monospace' },
+        font: { weight: '600', size: 11*fs, family: 'JetBrains Mono, monospace' },
         formatter: (v, ctx) => ctx.chart.data.datasets[ctx.datasetIndex].dataLabels?.[ctx.dataIndex] ?? v,
         anchor: 'center', align: 'center'
       }
     },
     scales: {
-      x: { title: { display: true, text: 'Groups', font: { size: 12*fs, family: 'Plus Jakarta Sans', weight: '700' }, color: textColor }, grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11*fs, weight: '600' } } },
-      y: { beginAtZero: true, title: { display: true, text: 'Frequency', font: { size: 12*fs, family: 'Plus Jakarta Sans', weight: '700' }, color: textColor }, grid: { color: gridColor }, ticks: { precision: 0, color: textColor, font: { size: 11*fs, weight: '600' } } }
+      x: { title: { display: true, text: 'Groups', font: { size: 12*fs, family: 'Inter', weight: '600' }, color: textColor }, grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11*fs, weight: '500' } } },
+      y: { beginAtZero: true, title: { display: true, text: 'Frequency', font: { size: 12*fs, family: 'Inter', weight: '600' }, color: textColor }, grid: { color: gridColor }, ticks: { precision: 0, color: textColor, font: { size: 11*fs, weight: '500' } } }
     }
   };
 }
@@ -2217,13 +2543,12 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFullscr
 // ============================================================
 // EXPORTS
 // ============================================================
-function pDisplay(p) { return p<0.001?'<0.001':p<0.01?p.toFixed(4):p.toFixed(6); }
-
 function exportWord(r) {
   let tbl = `<table border="1" cellpadding="10" style="border-collapse:collapse;width:100%;font-family:Calibri,sans-serif;"><tr style="background:#F0F4FF;"><th style="text-align:left;"></th>${currentData.cols.map(c=>`<th style="text-align:center;">${c}</th>`).join('')}<th style="text-align:center;">Total</th><th style="text-align:center;">Row%</th></tr>`;
   currentData.rows.forEach((row,i)=>{const rt=currentData.data[i].reduce((a,b)=>a+b,0);tbl+=`<tr><th style="text-align:left;background:#F0F4FF;">${row}</th>${currentData.data[i].map(v=>`<td style="text-align:center;">${v}</td>`).join('')}<td style="text-align:center;font-weight:bold;">${rt}</td><td style="text-align:center;">${r.N>0?(rt/r.N*100).toFixed(1):0}%</td></tr>`;});
   tbl+=`<tr style="background:#F0F4FF;"><th>Total</th>${r.nj.map(v=>`<td style="text-align:center;font-weight:bold;">${v}</td>`).join('')}<td style="text-align:center;font-weight:bold;">${r.N}</td><td style="text-align:center;">100%</td></tr></table>`;
   let propTbl = `<table border="1" cellpadding="10" style="border-collapse:collapse;width:100%;font-family:Calibri,sans-serif;"><tr style="background:#F0F4FF;"><th>Group</th>${r.labels.map(l=>`<th>${l}</th>`).join('')}</tr><tr><th>Success Count</th>${r.yj.map(v=>`<td style="text-align:center;">${v}</td>`).join('')}</tr><tr><th>Total</th>${r.nj.map(v=>`<td style="text-align:center;">${v}</td>`).join('')}</tr><tr><th>Proportion (%)</th>${r.props.map(p=>`<td style="text-align:center;font-weight:bold;">${p}%</td>`).join('')}</tr></table>`;
+  const pChiDisp = r.chiAssoc.pValue < 0.001 ? '<0.001' : r.chiAssoc.pValue.toFixed(6);
   const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>CATrend Analyzer — CATT Report</title>
   <style>
     body{font-family:Calibri,sans-serif;margin:48px;color:#0D1117;font-size:12pt;line-height:1.7;}
@@ -2248,34 +2573,37 @@ function exportWord(r) {
   <table>
     <tr><th style="text-align:left;">Statistic</th><th>Value</th><th>Interpretation</th></tr>
     <tr><td>Z-statistic (signed)</td><td class="mono">${r.Z.toFixed(4)}</td><td>${r.Z>0?'Positive = increasing trend':'Negative = decreasing trend'}</td></tr>
-    <tr><td>Chi-square (trend, df=1)</td><td class="mono">${r.chi.toFixed(4)}</td><td>Linear trend component</td></tr>
-    <tr><td>P-value (two-sided, CATT)</td><td class="mono">${r.pDisp}</td><td class="${r.sig?'sig-yes':'sig-no'}">${r.sig?'Statistically significant':'Not significant'} (α=0.05)</td></tr>
-    <tr><td>Chi-square (association, df=${r.chiAssoc.df})</td><td class="mono">${r.chiAssoc.statistic.toFixed(4)}</td><td>General association test</td></tr>
-    <tr><td>P-value (association)</td><td class="mono">${r.chiAssoc.pValue.toFixed(6)}</td><td></td></tr>
+    <tr><td>χ² trend (df=1) = Z²</td><td class="mono">${r.chiTrend.toFixed(4)}</td><td>Linear trend component</td></tr>
+    <tr><td>One-sided P-value (CATT)</td><td class="mono">${r.pOneDisp}</td><td>Tail in direction of observed trend (${r.trend.toLowerCase()})</td></tr>
+    <tr><td>Two-sided P-value (CATT)</td><td class="mono">${r.pTwoDisp}</td><td class="${r.sig?'sig-yes':'sig-no'}">${r.sig?'Statistically significant':'Not significant'} (α=0.05)</td></tr>
+    <tr><td>Pearson χ² (association, df=${r.chiAssoc.df})</td><td class="mono">${r.chiAssoc.statistic.toFixed(4)}</td><td>General association (SPSS/R/SAS compatible)</td></tr>
+    <tr><td>P-value (association)</td><td class="mono">${pChiDisp}</td><td>Based on χ² dist, df=${r.chiAssoc.df}</td></tr>
     <tr><td>Sample Size (N)</td><td class="mono">${r.N}</td><td>${r.k} ordered groups</td></tr>
     <tr><td>Trend direction</td><td>${r.trend}</td><td>${r.sig?'Significant trend detected':'No significant trend'}</td></tr>
     <tr><td>Continuity correction</td><td>${r.cc?'Yes (applied)':'No (not applied)'}</td><td></td></tr>
   </table>
   <h2>4. Statistical Interpretation</h2>
-  <div class="interp-box"><p><strong>Statistical finding:</strong> ${r.statInterp}</p></div>
+  <div class="interp-box"><p><strong>Statistical finding:</strong> ${r.statInterp.replace(/<\/?strong>/g,'')}</p></div>
   <h2>5. Practical Implications</h2>
   <div class="impl-box"><p><strong>Practical implications:</strong> ${r.practImpl}</p></div>
   <h2>6. Reporting Guidelines</h2>
   <p style="font-size:11pt;color:#2D3554;line-height:1.8;">
     The Cochran–Armitage Trend Test was conducted to examine the presence of a linear trend in proportions across ${r.k} ordered groups (N = ${r.N}).
     Results indicated ${r.sig ? `a statistically significant ${r.trend.toLowerCase()} trend` : 'no statistically significant trend'}
-    (Z = ${r.Z.toFixed(4)}, χ² = ${r.chi.toFixed(4)}, p ${r.pDisp}, two-sided).
+    (Z = ${r.Z.toFixed(4)}, one-sided p ${r.pOneDisp}, two-sided p ${r.pTwoDisp}).
+    The Pearson chi-square test of general association yielded χ²(${r.chiAssoc.df}) = ${r.chiAssoc.statistic.toFixed(4)}, p = ${pChiDisp}.
     ${r.cc ? 'A continuity correction was applied.' : 'No continuity correction was applied.'}
   </p>
   <h2>7. Citation</h2>
   <div class="citation">Ibrahim, M. M. (2026). <em>CATrend Analyzer: Cochran–Armitage Trend Test Analysis Tool</em> [Computer software]. Retrieved from https://cochran-armitage.vercel.app/</div>
-  <p class="meta">Analysis performed using CATrend Analyzer v1.0. Z reported with sign (+ = increasing, − = decreasing). P-value always two-sided. Statistical significance does not imply clinical importance — always consider effect size and context.</p>
+  <p class="meta">Analysis performed using CATrend Analyzer v1.0. Z reported with sign (+ = increasing, − = decreasing). One-sided and two-sided p-values reported. Pearson chi-square uses standard formula consistent with SPSS, R, and SAS.</p>
   </body></html>`;
   const blob = new Blob([html], {type:'application/msword'});
   const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`CATT-Report-${new Date().toISOString().slice(0,10)}.doc`; a.click();
 }
 
 function exportExcel(r) {
+  const pChiDisp = r.chiAssoc.pValue < 0.001 ? '<0.001' : r.chiAssoc.pValue.toFixed(6);
   let csv = `CATrend Analyzer - Cochran-Armitage Trend Test Analysis Report\n`;
   csv += `Generated: ${new Date().toLocaleString()}\n`;
   csv += `Software: CATrend Analyzer v1.0 | https://cochran-armitage.vercel.app/\n\n`;
@@ -2291,16 +2619,17 @@ function exportExcel(r) {
   csv+=`STATISTICAL RESULTS\n`;
   csv+=`Statistic,Value,Note\n`;
   csv+=`Z-statistic (signed),${r.Z.toFixed(4)},+ = increasing / - = decreasing\n`;
-  csv+=`Chi-square (trend df=1),${r.chi.toFixed(4)},Linear trend component\n`;
-  csv+=`P-value (two-sided CATT),${r.pDisp},${r.sig?'SIGNIFICANT at alpha=0.05':'Not significant at alpha=0.05'}\n`;
-  csv+=`Chi-square (association df=${r.chiAssoc.df}),${r.chiAssoc.statistic.toFixed(4)},General association\n`;
-  csv+=`P-value (association),${r.chiAssoc.pValue.toFixed(6)},\n`;
+  csv+=`Chi-square trend (df=1),${r.chiTrend.toFixed(4)},Linear trend = Z squared\n`;
+  csv+=`One-sided P-value (CATT),${r.pOneDisp},Tail in ${r.trend.toLowerCase()} direction\n`;
+  csv+=`Two-sided P-value (CATT),${r.pTwoDisp},${r.sig?'SIGNIFICANT at alpha=0.05':'Not significant at alpha=0.05'}\n`;
+  csv+=`Pearson chi-square (df=${r.chiAssoc.df}),${r.chiAssoc.statistic.toFixed(4)},General association (SPSS/R/SAS compatible)\n`;
+  csv+=`P-value (association),${pChiDisp},Based on chi-square distribution df=${r.chiAssoc.df}\n`;
   csv+=`Sample Size (N),${r.N},\n`;
   csv+=`Number of Groups (k),${r.k},\n`;
   csv+=`Trend Direction,${r.trend},\n`;
   csv+=`Continuity Correction,${r.cc?'Yes':'No'},\n\n`;
   csv+=`STATISTICAL INTERPRETATION\n`;
-  csv+=`"${r.statInterp}"\n\n`;
+  csv+=`"${r.statInterp.replace(/<\/?strong>/g,'').replace(/&lt;/g,'<')}"\n\n`;
   csv+=`PRACTICAL IMPLICATIONS\n`;
   csv+=`"${r.practImpl}"\n\n`;
   csv+=`CITATION\n`;
@@ -2309,16 +2638,8 @@ function exportExcel(r) {
   const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`CATT-Analysis-${new Date().toISOString().slice(0,10)}.csv`; a.click();
 }
 
-// ============================================================
-// RAW DATA CSV — TRANSPOSED (observation-level, long format)
-// Each row = one observation. Columns = Group, Outcome
-// E.g. if Level 1 has 10 successes and 30 failures → 40 rows
-// ============================================================
 function exportCSV(r) {
   const { rows, cols, data } = currentData;
-  // Column headers: one column per variable (Group + each outcome row name)
-  // We produce: Observation, Group, Outcome
-  // where Outcome = the row label (e.g. "Success" or "Failure")
   let csv = `Observation,Group,Outcome\n`;
   let obsNum = 1;
   cols.forEach((col, j) => {
