@@ -1930,7 +1930,7 @@ function buildDatasets(r) {
   const sC=document.getElementById('showCounts').checked;
   const sR=document.getElementById('showRowPercent').checked;
   const sCl=document.getElementById('showColPercent').checked;
-  return currentData.rows.map((row,i)=>{
+  return [...currentData.rows].map((row,i)=>{
     const hex = barColors[i] || DEFAULT_COLORS[i % DEFAULT_COLORS.length];
     const bg  = colorWithOpacity(hex, barOpacity);
     const bd  = hex;
@@ -1942,7 +1942,7 @@ function buildDatasets(r) {
       return pts.join('\n')||String(v);
     });
     return{label:row, data:currentData.data[i], dataLabels:dl, backgroundColor:bg, borderColor:bd, borderWidth:1.5, borderRadius:0, stack:'main'};
-  });
+  }).reverse();
 }
 
 function chartOpts(r, lg=false){
