@@ -1762,7 +1762,7 @@ function performCAT(){
   if(pTwo<0.05) interp+=`The evidence supports an <strong>${trend.toLowerCase()}</strong> trend (Z = ${Z.toFixed(4)}, one-sided p = ${pOneD}).`;
   else interp+='This suggests no systematic relationship between the outcome and the ordered groups.';
   const impl=sig
-    ?`Statistical evidence supports a ${trend.toLowerCase()} trend across groups. The signed Z-statistic (${Z.toFixed(4)}) indicates the direction. Consider effect size and clinical context.`
+    ?`Statistical evidence supports a ${trend.toLowerCase()} trend across groups. The signed Z-statistic (${Z.toFixed(4)}) indicates the direction.`
     :`No statistical evidence for a trend was found. The outcome variable does not show systematic change across ordered categories.`;
   const chiAssoc=pearsonChiSq();
   return{Z,chiTrend,pTwo,pOne,pTwoD,pOneD,sig,N,k,pbar,nj,yj,rowT,rowPct,colPct,props,labels:cols.slice(),trend,chiAssoc,interp,impl,cc};
