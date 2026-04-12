@@ -365,6 +365,28 @@
   --s-xl:  0 24px 64px rgba(0,0,0,0.65);
 }
 
+/* YouTube Tutorial Button Styling */
+.topbar-right .youtube-tutorial {
+  background: #FF0000;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.topbar-right .youtube-tutorial i {
+  color: white;
+}
+
+.topbar-right .youtube-tutorial:hover {
+  background: #cc0000;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+.topbar-right .youtube-tutorial:hover i {
+  color: white;
+}
+
 /* =====================================================
    RESET & BASE
 ===================================================== */
@@ -1143,14 +1165,17 @@ a:hover { text-decoration: underline; }
         <span class="current" id="topbarSection">Home</span>
       </div>
     </div>
-    <div class="topbar-right">
-      <a href="https://github.com/shinyhealthtools/catrendanalyzer" target="_blank" rel="noopener" class="tb-ghost">
-        <i class="fab fa-github"></i> Source Code
-      </a>
-      <button class="tb-primary" onclick="showSection('analysis')">
-        <i class="fas fa-play"></i> Start Analysis
-      </button>
-    </div>
+<div class="topbar-right">
+  <a href="https://youtu.be/FdUEeECwDcc" target="_blank" rel="noopener" class="tb-ghost youtube-tutorial">
+    <i class="fab fa-youtube"></i> Watch Tutorial
+  </a>
+  <a href="https://github.com/shinyhealthtools/catrendanalyzer" target="_blank" rel="noopener" class="tb-ghost">
+    <i class="fab fa-github"></i> Source Code
+  </a>
+  <button class="tb-primary" onclick="showSection('analysis')">
+    <i class="fas fa-play"></i> Start Analysis
+  </button>
+</div>
   </div>
 
   <!-- ==================== HOME ==================== -->
